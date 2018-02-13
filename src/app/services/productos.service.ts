@@ -1,17 +1,43 @@
 import { Injectable } from '@angular/core';
 import { Http } from "@angular/http";
+import { HttpClient } from "@angular/common/http";
+
+import { Observable } from "rxjs/Observable";
+import "rxjs/add/operator/map";
 
 @Injectable()
 export class ProductosService {
-
+//ProductosService es para mí el AuthService
   productos:any[] = [];
   productos_filtrado:any[] = [];
   cargando_p:boolean =false; //que me mantenga algo así como un loading
+  /*aparte ya en clase*/
+  public token: string;
 
+  constructor( private http:Http ) {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.token =currentUser && currentUser.token;
+  }
+  login( user:string, password: string ):Observable<boolean>{
+    return this.http.post('http://50.116.28.21:8000/api-token-auth/'), { username: user, password: password }
+    .map(response => {
+      let token = response['token'];
+      if (token) {
+          this.token = token;
+          localStorage.setItem('currentUser', JSON.stringify({ username: user, token:token }));
+          return true;
+      }
+      return false;
+    })
+  }
+
+
+
+/*
   constructor( private http:Http ) {
     this.cargar_productos();
   }
-
+*/
   public buscar_producto( termino:string ){
 
     console.log("Buscando producto");

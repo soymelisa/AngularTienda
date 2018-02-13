@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+/*Esto lo agregué después
+import { AuthService } from "./services";
+*/
+
 import { HttpModule } from "@angular/http";
 
 // Rutas
@@ -39,7 +44,9 @@ import { SearchComponent } from './components/search/search.component';
   ],
   providers: [
     InformacionService,
-    ProductosService
+    ProductosService,
+
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
