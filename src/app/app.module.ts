@@ -24,7 +24,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PortafolioComponent } from './components/portafolio/portafolio.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProdcutoItemsComponent } from './components/prodcuto-items/prodcuto-items.component';
-import { SearchComponent } from './components/search/search.component';
+import { SearchComponent } from './components/search/search.componen;
+import { LoginComponent } from './components/login/login.component't';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { SearchComponent } from './components/search/search.component';
     PortafolioComponent,
     AboutComponent,
     ProdcutoItemsComponent,
-    SearchComponent
+    SearchCompone,
+    LoginComponentnt
   ],
   imports: [
     BrowserModule,

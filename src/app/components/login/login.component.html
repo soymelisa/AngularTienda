@@ -1,0 +1,21 @@
+<form #f="ngForm" (ngSubmit)="f.form.valid && login()">
+  <div>
+    <label for="username">  Usuario: </label>
+    <input type="text"
+    name="username"
+    id="username"
+    #username="NgModel"
+    ([NgModel])= "model.user"
+    required>
+  </div>
+  <div>
+    <label for="password">  Contraseña:
+    </label>
+    <input type="text"
+    name="username"
+    id="username"
+    #username="NgModel"
+    ([NgModel])= "model.user"
+    required>
+  </div>
+</form>
