@@ -9,8 +9,17 @@ import {
 @Injectable()
 export class AuthGuardService implements CanActivate {
 
-  constructor() { }
-  CanActivate(){
-    
+  constructor(
+    private router
+  ) { }
+  /*
+  CanActivate( Observable<boolean> | Promise<boolean>  | boolean{
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  )}
+  */
+  if (localStorage.getItem('currentUser')) {
+      return true;
   }
+
 }

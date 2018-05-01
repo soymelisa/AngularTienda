@@ -31,7 +31,10 @@ export class ProductosService {
     })
   }
 
+logout():void{
+  this.token = null;
 
+}
 
 /*
   constructor( private http:Http ) {
